@@ -75,7 +75,11 @@ const BANK=[{"c":2,"t":"Black Death","type":"mc","q":"What was one major consequ
 {"c":5,"t":"Stenka Razin","type":"mc","q":"Which revolt is listed in the presentation as having been crushed in Russia between 1667 and 1671?","a":["Stenka Razin’s Revolt","The Dutch Revolt","The Glorious Revolution","The English Civil War"],"k":0,"e":"The presentation gives Stenka Razin’s Revolt as 1667–1671.","s":"Pptcapip05.pdf — Russia and Peter the Great","origin":"slides"},
 {"c":5,"t":"Peter the Great’s War","type":"tf","q":"The presentation describes Peter the Great’s Great Northern War as a conflict against Sweden under Charles XII.","a":["True","False"],"k":0,"e":"The presentation identifies Sweden and Charles XII as Russia’s opponent in the Great Northern War.","s":"Pptcapip05.pdf — Russia and Peter the Great","origin":"slides"},
 {"c":5,"t":"East-West Divide","type":"mc","q":"Which geographical feature is used in the presentation to describe an east-west divide in Europe?","a":["The Elbe","The Rhine at Versailles","The coast of Newfoundland","The Black Sea only"],"k":0,"e":"The presentation uses the Elbe to describe an east-west social and economic divide.","s":"Pptcapip05.pdf — Eastern Europe","origin":"slides"},
-{"c":5,"t":"Prussian Society","type":"tf","q":"The presentation contrasts western Europe with eastern areas where serf labor remained more prevalent.","a":["True","False"],"k":0,"e":"The presentation notes greater reliance on serf labor east of the Elbe.","s":"Pptcapip05.pdf — Eastern Europe","origin":"slides"}];
+{"c":5,"t":"Prussian Society","type":"tf","q":"The presentation contrasts western Europe with eastern areas where serf labor remained more prevalent.","a":["True","False"],"k":0,"e":"The presentation notes greater reliance on serf labor east of the Elbe.","s":"Pptcapip05.pdf — Eastern Europe","origin":"slides"},
+{"c":2,"t":"Matching — Chapter 2","type":"matching","q":"Match each figure or work with its description.","terms":["Erasmus","Thomas More","Niccolò Machiavelli","Henry VIII"],"a":["Author of Utopia","Author of The Prince","Author of In Praise of Folly","English monarch recognized as head of the Church of England"],"k":[2,0,1,3],"e":"These figures and works are paired as described in the presentation.","s":"Pptcapip02.pdf — Renaissance, Humanism, and the English Reformation","origin":"slides"},
+{"c":3,"t":"Matching — Chapter 3","type":"matching","q":"Match each event or settlement with its description.","terms":["Edict of Nantes (1598)","Spanish Armada (1588)","Peace of Westphalia (1648)","Dutch Revolt"],"a":["Settlement associated with Henry IV and religious toleration in France","Spanish naval expedition against England","Settlement concluding the Thirty Years’ War","Revolt against Spanish rule connected with the Dutch Republic"],"k":[0,1,2,3],"e":"Each match is based on the presentation’s description of these events.","s":"Pptcapip03.pdf — Religious Wars and the Peace of Westphalia","origin":"slides"},
+{"c":4,"t":"Matching — Chapter 4","type":"matching","q":"Match each person, document, or institution with its role.","terms":["Jean-Baptiste Colbert","English Bill of Rights","Bank of Amsterdam","William III of Orange"],"a":["Mercantilist policies to develop French industry and support royal finances","Affirmed parliamentary rights and limited royal power","Major financial institution in the Dutch Golden Age","Key figure in coalitions against Louis XIV"],"k":[0,1,2,3],"e":"The matches reflect the roles stated in the presentation.","s":"Pptcapip04.pdf — Louis XIV, England, and the Dutch Golden Age","origin":"slides"},
+{"c":5,"t":"Matching — Chapter 5","type":"matching","q":"Match each ruler or event with its description.","terms":["Frederick William I","Peter the Great","Narva (1700)","Poltava (1709)"],"a":["Expanded Prussia’s army to about 83,000","Led Russia’s westernizing transformation","Russian defeat against Sweden","Russian victory against Sweden"],"k":[0,1,2,3],"e":"The presentation identifies these rulers and battles with these descriptions.","s":"Pptcapip05.pdf — Prussia and Russia","origin":"slides"}];
 let quiz=[],idx=0,answers=[],checked=false,mode="study";
 const $=id=>document.getElementById(id);
 function filtered(){let src=$("source").value,ch=$("chapter").value,m=$("mode").value;return BANK.filter(x=>(src==="quiz"?x.origin==="quiz":src==="book"?x.origin==="book":src==="slides"?x.origin==="slides":x.origin!=="quiz")&&(ch==="all"||String(x.c)===ch)&&(m!=="tf"||x.type==="tf"))}
@@ -98,31 +102,37 @@ function start(){
 }
 function render(){
  let q=quiz[idx];$("qnum").textContent=(idx+1)+"/"+quiz.length;$("answered").textContent=answers.filter(x=>x!==null).length;
- $("score").textContent=mode==="exam"?"—":answers.slice(0,idx).filter((x,i)=>x===quiz[i].k).length;
+ $("score").textContent=mode==="exam"?"—":answers.slice(0,idx).filter((x,i)=>isCorrect(quiz[i],x)).length;
  $("bar").style.width=(idx/quiz.length*100)+"%";$("topic").textContent="Chapter "+q.c+" · "+q.t;
- $("question").textContent=(q.type==="tf"?"True or False: ":"")+q.q;
- $("choices").innerHTML=q.a.map((a,i)=>'<label class="choice"><input type="radio" name="answer" value="'+i+'" '+(answers[idx]===i?"checked":"")+' '+(checked?"disabled":"")+'><span>'+String.fromCharCode(65+i)+". "+a.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</span></label>').join("");
- $("choices").querySelectorAll('input[name="answer"]').forEach(el=>el.addEventListener("change",()=>{answers[idx]=Number(el.value);$("answered").textContent=answers.filter(x=>x!==null).length}));
+ $("question").textContent=(q.type==="tf"?"True or False: ":q.type==="matching"?"Matching: ":"")+q.q;
+ if(q.type==="matching"){
+  $("choices").innerHTML=q.terms.map((term,i)=>'<label class="choice"><span style="min-width:130px;font-weight:650">'+term+'</span><select class="match-select" data-index="'+i+'" '+(checked?"disabled":"")+'><option value="">Choose a match…</option>'+q.a.map((a,j)=>'<option value="'+j+'" '+(answers[idx]&&answers[idx][i]===j?"selected":"")+'>('+String.fromCharCode(65+j)+') '+a+'</option>').join("")+'</select></label>').join("");
+  $("choices").querySelectorAll(".match-select").forEach(el=>el.addEventListener("change",()=>{if(!Array.isArray(answers[idx]))answers[idx]=Array(q.terms.length).fill(null);answers[idx][Number(el.dataset.index)]=el.value===""?null:Number(el.value);$("answered").textContent=answers.filter(x=>x!==null).length}));
+ }else{
+  $("choices").innerHTML=q.a.map((a,i)=>'<label class="choice"><input type="radio" name="answer" value="'+i+'" '+(answers[idx]===i?"checked":"")+' '+(checked?"disabled":"")+'><span>'+String.fromCharCode(65+i)+". "+a.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</span></label>').join("");
+  $("choices").querySelectorAll('input[name="answer"]').forEach(el=>el.addEventListener("change",()=>{answers[idx]=Number(el.value);$("answered").textContent=answers.filter(x=>x!==null).length}));
+ }
  $("feedback").classList.add("hide");
  $("submit").classList.toggle("hide",checked||mode==="exam");
  $("next").classList.toggle("hide",idx===quiz.length-1||(mode!=="exam"&&!checked));
  $("finish").classList.toggle("hide",idx!==quiz.length-1);
  $("finish").textContent=mode==="exam"?"Finish exam":"Finish practice";
 }
+function isCorrect(q,answer){return q.type==="matching"?Array.isArray(answer)&&answer.length===q.k.length&&q.k.every((v,i)=>answer[i]===v):answer===q.k}
+function answerLabel(q,answer){return q.type==="matching"?q.terms.map((term,i)=>term+" → "+(answer&&answer[i]!==null&&answer[i]!==undefined?q.a[answer[i]]:"Not answered")).join("; "):(answer===null||answer===undefined?"Not answered":q.a[answer])}
 function submit(){
- let pick=document.querySelector('input[name="answer"]:checked');if(!pick){alert("Choose an answer first.");return}
- answers[idx]=Number(pick.value);checked=true;let q=quiz[idx],ok=answers[idx]===q.k;
+ let q=quiz[idx];if(q.type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.some(el=>el.value==="")){alert("Match every term before checking.");return}answers[idx]=sels.map(el=>Number(el.value));}else{let pick=document.querySelector('input[name="answer"]:checked');if(!pick){alert("Choose an answer first.");return}answers[idx]=Number(pick.value)}checked=true;let ok=isCorrect(q,answers[idx]);
  $("feedback").className="feedback "+(ok?"good":"bad");
- $("feedback").innerHTML="<h3>"+(ok?"Correct!":"Not quite.")+"</h3><div><strong>Answer:</strong> "+q.a[q.k]+"</div><p>"+q.e+"</p>"+(q.type==="tf"&&answers[idx]!==q.k&&q.fix?"<p><strong>Correction:</strong> "+q.fix+"</p>":"")+"<div class=\"source\"><strong>Source:</strong> "+q.s+"</div>";
+ $("feedback").innerHTML="<h3>"+(ok?"Correct!":"Not quite.")+"</h3><div><strong>Answer:</strong> "+(q.type==="matching"?answerLabel(q,q.k):q.a[q.k])+"</div><p>"+q.e+"</p>"+(q.type==="tf"&&answers[idx]!==q.k&&q.fix?"<p><strong>Correction:</strong> "+q.fix+"</p>":"")+"<div class=\"source\"><strong>Source:</strong> "+q.s+"</div>";
  $("feedback").classList.remove("hide");$("submit").classList.add("hide");$("next").classList.toggle("hide",idx===quiz.length-1);$("finish").classList.toggle("hide",idx!==quiz.length-1);
- $("choices").querySelectorAll("input").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>x===quiz[i].k).length
+ $("choices").querySelectorAll("input").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>isCorrect(quiz[i],x)).length
 }
 function finish(){
- let correct=answers.filter((x,i)=>x===quiz[i].k).length;$("quiz").classList.add("hide");$("results").classList.remove("hide");
+ let correct=answers.filter((x,i)=>isCorrect(quiz[i],x)).length;$("quiz").classList.add("hide");$("results").classList.remove("hide");
  $("finalCorrect").textContent=correct;$("finalTotal").textContent=quiz.length;$("finalPct").textContent=Math.round(correct/quiz.length*100)+"%";
- $("review").innerHTML="<h3>Review</h3>"+quiz.map((q,i)=>'<div class="chapter"><strong>'+(i+1)+". "+q.q.replace(/</g,"&lt;")+'</strong><p class="small">Your answer: '+(answers[i]===null?"Not answered":q.a[answers[i]])+' · Correct: '+q.a[q.k]+'</p><p>'+q.e+'</p>'+(q.type==='tf'&&answers[i]!==q.k&&q.fix?'<p><strong>Correction:</strong> '+q.fix+'</p>':'')+'<p class="source">'+q.s+'</p></div>').join("");
+ $("review").innerHTML="<h3>Review</h3>"+quiz.map((q,i)=>'<div class="chapter"><strong>'+(i+1)+". "+q.q.replace(/</g,"&lt;")+'</strong><p class="small">Your answer: '+answerLabel(q,answers[i])+' · Correct: '+answerLabel(q,q.k)+'</p><p>'+q.e+'</p>'+(q.type==='tf'&&answers[i]!==q.k&&q.fix?'<p><strong>Correction:</strong> '+q.fix+'</p>':'')+'<p class="source">'+q.s+'</p></div>').join("");
 }
-$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{if(mode==="exam"){let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}idx++;checked=false;render()};
-$("finish").onclick=()=>{if(mode==="exam"){let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}finish()};
+$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{if(mode==="exam"){if(quiz[idx].type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.length&&sels.every(el=>el.value!==""))answers[idx]=sels.map(el=>Number(el.value))}else{let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}}idx++;checked=false;render()};
+$("finish").onclick=()=>{if(mode==="exam"){if(quiz[idx].type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.length&&sels.every(el=>el.value!==""))answers[idx]=sels.map(el=>Number(el.value))}else{let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}}finish()};
 $("again").onclick=()=>{$("results").classList.add("hide");$("welcome").classList.remove("hide")};
 $("reset").onclick=()=>{$("quiz").classList.add("hide");$("results").classList.add("hide");$("welcome").classList.remove("hide");idx=0;answers=[]};</script></body></html>
