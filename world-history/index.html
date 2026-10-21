@@ -21,10 +21,49 @@ const BANK=[{"c":2,"t":"Black Death","type":"mc","q":"What was one major consequ
 let quiz=[],idx=0,answers=[],checked=false,mode="study";
 const $=id=>document.getElementById(id);
 function filtered(){let src=$("source").value,ch=$("chapter").value,m=$("mode").value;return BANK.filter(x=>(src==="book"?x.origin==="book":src==="slides"?x.origin!=="book":true)&&(ch==="all"||String(x.c)===ch)&&(m!=="tf"||x.type==="tf"))}
-function start(){mode=$("mode").value;let b=filtered();if($("source").value==="book"){alert("The chapter PDFs are scanned and their contents have not yet been verified for a book-only question bank. Choose presentations or combined sources for now.");return}if($("shuffle").checked)b.sort(()=>Math.random()-.5);let n=$("count").value;let target=n==="All available"?b.length:Math.min(Number(n),b.length);if(mode==="exam"){let mc=b.filter(x=>x.type==="mc"),tf=b.filter(x=>x.type==="tf");let half=Math.floor(target/2);if(mc.length<half||tf.length<half){alert("There are not enough questions of both types to build an even 50/50 exam for this selection. Choose All chapters or a smaller question count.");return}if(tf.length<half||mc.length<half){alert("Not enough multiple-choice and true/false questions to match the 50/50 exam format. Choose fewer questions or all chapters.");return}quiz=[...mc.slice(0,half),...tf.slice(0,half)];if($("shuffle").checked)quiz.sort(()=>Math.random()-.5)}else quiz=b.slice(0,target);if(!quiz.length){alert("No questions match these filters.");return}idx=0;answers=Array(quiz.length).fill(null);checked=false;$("welcome").classList.add("hide");$("results").classList.add("hide");$("quiz").classList.remove("hide");render()}
-function render(){let q=quiz[idx];$("qnum").textContent=(idx+1)+"/"+quiz.length;$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=mode==="exam"?"—":answers.slice(0,idx).filter((x,i)=>x===quiz[i].k).length;$("bar").style.width=(idx/quiz.length*100)+"%";$("topic").textContent="Chapter "+q.c+" · "+q.t;$("question").textContent=(q.type==="tf"?"True or False: ":"")+q.q;$("choices").innerHTML=q.a.map((a,i)=>'<label class="choice"><input type="radio" name="answer" value="'+i+'" '+(answers[idx]===i?"checked":"")+' '+(checked?"disabled":"")+'><span>'+String.fromCharCode(65+i)+". "+a.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</span></label>').join("");$("feedback").classList.add("hide");$("submit").classList.toggle("hide",checked||mode==="exam");$("next").classList.toggle("hide",!checked||idx===quiz.length-1);$("finish").classList.toggle("hide",mode!=="exam"||idx!==quiz.length-1);if(mode==="exam")$("submit").classList.add("hide")}
-function submit(){let pick=document.querySelector('input[name="answer"]:checked');if(!pick){alert("Choose an answer first.");return}answers[idx]=Number(pick.value);checked=true;let q=quiz[idx],ok=answers[idx]===q.k;$("feedback").className="feedback "+(ok?"good":"bad");$("feedback").innerHTML="<h3>"+(ok?"Correct!":"Not quite.")+"</h3><div><strong>Answer:</strong> "+q.a[q.k]+"</div><p>"+q.e+"</p>"+(q.type==="tf"&&answers[idx]!==q.k&&q.fix?"<p><strong>Correction:</strong> "+q.fix+"</p>":"")+"<div class=\"source\"><strong>Source:</strong> "+q.s+"</div>";$("feedback").classList.remove("hide");$("submit").classList.add("hide");$("next").classList.toggle("hide",idx===quiz.length-1);$("finish").classList.toggle("hide",idx!==quiz.length-1);$("choices").querySelectorAll("input").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>x===quiz[i].k).length}
-function next(){idx++;checked=false;render()}
-function finish(){let correct=answers.filter((x,i)=>x===quiz[i].k).length;$("quiz").classList.add("hide");$("results").classList.remove("hide");$("finalCorrect").textContent=correct;$("finalTotal").textContent=quiz.length;$("finalPct").textContent=Math.round(correct/quiz.length*100)+"%";$("review").innerHTML="<h3>Review</h3>"+quiz.map((q,i)=>'<div class="chapter"><strong>'+(i+1)+". "+q.q.replace(/</g,"&lt;")+'</strong><p class="small">Your answer: '+(answers[i]===null?"Not answered":q.a[answers[i]])+' · Correct: '+q.a[q.k]+'</p><p>'+q.e+'</p>'+(q.type==='tf'&&answers[i]!==q.k&&q.fix?'<p><strong>Correction:</strong> '+q.fix+'</p>':'')+'<p class="source">'+q.s+'</p></div>').join("");}
-$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{idx++;checked=false;render()};$("finish").onclick=finish;$("again").onclick=()=>{$("results").classList.add("hide");$("welcome").classList.remove("hide")};$("reset").onclick=()=>{$("quiz").classList.add("hide");$("results").classList.add("hide");$("welcome").classList.remove("hide");idx=0;answers=[]};
-</script></body></html>
+function start(){
+ mode=$("mode").value;let b=filtered();
+ if($("shuffle").checked)b.sort(()=>Math.random()-.5);
+ let n=$("count").value,target=n==="All available"?b.length:Math.min(Number(n),b.length);
+ if(mode==="exam"){
+  let mc=b.filter(x=>x.type==="mc"),tf=b.filter(x=>x.type==="tf");
+  let takeMC=Math.min(Math.ceil(target/2),mc.length),takeTF=Math.min(Math.floor(target/2),tf.length);
+  let chosen=[...mc.slice(0,takeMC),...tf.slice(0,takeTF)];
+  let remaining=b.filter(x=>!chosen.includes(x));
+  chosen.push(...remaining.slice(0,Math.max(0,target-chosen.length)));
+  quiz=chosen;
+  if($("shuffle").checked)quiz.sort(()=>Math.random()-.5);
+ }else quiz=b.slice(0,target);
+ if(!quiz.length){alert("No hay preguntas disponibles para esta combinación de fuente, capítulo y modalidad. Prueba otra selección.");return}
+ idx=0;answers=Array(quiz.length).fill(null);checked=false;$("welcome").classList.add("hide");$("results").classList.add("hide");$("quiz").classList.remove("hide");render()
+}
+function render(){
+ let q=quiz[idx];$("qnum").textContent=(idx+1)+"/"+quiz.length;$("answered").textContent=answers.filter(x=>x!==null).length;
+ $("score").textContent=mode==="exam"?"—":answers.slice(0,idx).filter((x,i)=>x===quiz[i].k).length;
+ $("bar").style.width=(idx/quiz.length*100)+"%";$("topic").textContent="Chapter "+q.c+" · "+q.t;
+ $("question").textContent=(q.type==="tf"?"True or False: ":"")+q.q;
+ $("choices").innerHTML=q.a.map((a,i)=>'<label class="choice"><input type="radio" name="answer" value="'+i+'" '+(answers[idx]===i?"checked":"")+' '+(checked?"disabled":"")+'><span>'+String.fromCharCode(65+i)+". "+a.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</span></label>').join("");
+ $("choices").querySelectorAll('input[name="answer"]').forEach(el=>el.addEventListener("change",()=>{answers[idx]=Number(el.value);$("answered").textContent=answers.filter(x=>x!==null).length}));
+ $("feedback").classList.add("hide");
+ $("submit").classList.toggle("hide",checked||mode==="exam");
+ $("next").classList.toggle("hide",idx===quiz.length-1||(mode!=="exam"&&!checked));
+ $("finish").classList.toggle("hide",idx!==quiz.length-1);
+ $("finish").textContent=mode==="exam"?"Finish exam":"Finish practice";
+}
+function submit(){
+ let pick=document.querySelector('input[name="answer"]:checked');if(!pick){alert("Choose an answer first.");return}
+ answers[idx]=Number(pick.value);checked=true;let q=quiz[idx],ok=answers[idx]===q.k;
+ $("feedback").className="feedback "+(ok?"good":"bad");
+ $("feedback").innerHTML="<h3>"+(ok?"Correct!":"Not quite.")+"</h3><div><strong>Answer:</strong> "+q.a[q.k]+"</div><p>"+q.e+"</p>"+(q.type==="tf"&&answers[idx]!==q.k&&q.fix?"<p><strong>Correction:</strong> "+q.fix+"</p>":"")+"<div class=\"source\"><strong>Source:</strong> "+q.s+"</div>";
+ $("feedback").classList.remove("hide");$("submit").classList.add("hide");$("next").classList.toggle("hide",idx===quiz.length-1);$("finish").classList.toggle("hide",idx!==quiz.length-1);
+ $("choices").querySelectorAll("input").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>x===quiz[i].k).length
+}
+function finish(){
+ let correct=answers.filter((x,i)=>x===quiz[i].k).length;$("quiz").classList.add("hide");$("results").classList.remove("hide");
+ $("finalCorrect").textContent=correct;$("finalTotal").textContent=quiz.length;$("finalPct").textContent=Math.round(correct/quiz.length*100)+"%";
+ $("review").innerHTML="<h3>Review</h3>"+quiz.map((q,i)=>'<div class="chapter"><strong>'+(i+1)+". "+q.q.replace(/</g,"&lt;")+'</strong><p class="small">Your answer: '+(answers[i]===null?"Not answered":q.a[answers[i]])+' · Correct: '+q.a[q.k]+'</p><p>'+q.e+'</p>'+(q.type==='tf'&&answers[i]!==q.k&&q.fix?'<p><strong>Correction:</strong> '+q.fix+'</p>':'')+'<p class="source">'+q.s+'</p></div>').join("");
+}
+$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{if(mode==="exam"){let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}idx++;checked=false;render()};
+$("finish").onclick=()=>{if(mode==="exam"){let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}finish()};
+$("again").onclick=()=>{$("results").classList.add("hide");$("welcome").classList.remove("hide")};
+$("reset").onclick=()=>{$("quiz").classList.add("hide");$("results").classList.add("hide");$("welcome").classList.remove("hide");idx=0;answers=[]};</script></body></html>
