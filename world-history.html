@@ -26,14 +26,15 @@ function start(){
  if($("shuffle").checked)b.sort(()=>Math.random()-.5);
  let n=$("count").value,target=n==="All available"?b.length:Math.min(Number(n),b.length);
  if(mode==="exam"){
-  let mc=b.filter(x=>x.type==="mc"),tf=b.filter(x=>x.type==="tf");
-  let takeMC=Math.min(Math.ceil(target/2),mc.length),takeTF=Math.min(Math.floor(target/2),tf.length);
-  let chosen=[...mc.slice(0,takeMC),...tf.slice(0,takeTF)];
-  let remaining=b.filter(x=>!chosen.includes(x));
-  chosen.push(...remaining.slice(0,Math.max(0,target-chosen.length)));
-  quiz=chosen;
+  // Build an exam from the available question pool; do not impose a fixed
+  // percentage split between question types. Randomize the pool, then take
+  // the requested number so the formats can vary naturally.
+  let pool=[...b].sort(()=>Math.random()-.5);
+  quiz=pool.slice(0,target);
+ }else{
+  quiz=b.slice(0,target);
   if($("shuffle").checked)quiz.sort(()=>Math.random()-.5);
- }else quiz=b.slice(0,target);
+ }
  if(!quiz.length){alert("No hay preguntas disponibles para esta combinación de fuente, capítulo y modalidad. Prueba otra selección.");return}
  idx=0;answers=Array(quiz.length).fill(null);checked=false;$("welcome").classList.add("hide");$("results").classList.add("hide");$("quiz").classList.remove("hide");render()
 }
