@@ -125,7 +125,7 @@ function submit(){
  $("feedback").className="feedback "+(ok?"good":"bad");
  $("feedback").innerHTML="<h3>"+(ok?"Correct!":"Not quite.")+"</h3><div><strong>Answer:</strong> "+(q.type==="matching"?answerLabel(q,q.k):q.a[q.k])+"</div><p>"+q.e+"</p>"+(q.type==="tf"&&answers[idx]!==q.k&&q.fix?"<p><strong>Correction:</strong> "+q.fix+"</p>":"")+"<div class=\"source\"><strong>Source:</strong> "+q.s+"</div>";
  $("feedback").classList.remove("hide");$("submit").classList.add("hide");$("next").classList.toggle("hide",idx===quiz.length-1);$("finish").classList.toggle("hide",idx!==quiz.length-1);
- $("choices").querySelectorAll("input").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>isCorrect(quiz[i],x)).length
+ $("choices").querySelectorAll("input,select").forEach(x=>x.disabled=true);$("answered").textContent=answers.filter(x=>x!==null).length;$("score").textContent=answers.filter((x,i)=>isCorrect(quiz[i],x)).length
 }
 function finish(){
  let correct=answers.filter((x,i)=>isCorrect(quiz[i],x)).length;$("quiz").classList.add("hide");$("results").classList.remove("hide");
