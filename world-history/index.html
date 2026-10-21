@@ -21,6 +21,7 @@ const BANK=[{"c":2,"t":"Black Death","type":"mc","q":"What was one major consequ
 let quiz=[],idx=0,answers=[],checked=false,mode="study";
 const $=id=>document.getElementById(id);
 function isAnswered(q,a){return q.type==="matching"?Array.isArray(a)&&a.length===q.terms.length&&a.every(v=>v!==null&&v!==undefined):a!==null&&a!==undefined}\nfunction filtered(){let src=$("source").value,ch=$("chapter").value,m=$("mode").value;return BANK.filter(x=>(src==="quiz"?x.origin==="quiz":src==="book"?x.origin==="book":src==="slides"?x.origin==="slides":x.origin!=="quiz")&&(ch==="all"||String(x.c)===ch)&&(m!=="tf"||x.type==="tf"))}
+function updateStartLabel(){$("start").textContent=$("mode").value==="exam"?"Start exam":"Start practice"}
 function start(){
  mode=$("mode").value;let b=filtered();
  if($("shuffle").checked)b.sort(()=>Math.random()-.5);
@@ -35,7 +36,7 @@ function start(){
   quiz=b.slice(0,target);
   if($("shuffle").checked)quiz.sort(()=>Math.random()-.5);
  }
- if(!quiz.length){alert("No hay preguntas disponibles para esta combinación de fuente, capítulo y modalidad. Prueba otra selección.");return}
+ if(!quiz.length){alert("No questions are available for this source, chapter, and mode. Choose another combination.");return}
  idx=0;answers=Array(quiz.length).fill(null);checked=false;$("welcome").classList.add("hide");$("results").classList.add("hide");$("quiz").classList.remove("hide");render()
 }
 function render(){
@@ -54,7 +55,7 @@ function render(){
  $("submit").classList.toggle("hide",checked||mode==="exam");
  $("next").classList.toggle("hide",idx===quiz.length-1||(mode!=="exam"&&!checked));
  $("finish").classList.toggle("hide",idx!==quiz.length-1);
- $("finish").textContent=mode==="exam"?"Finish exam":"Finish practice";
+ $("finish").textContent=mode==="exam"?"Submit exam":"Finish practice";
 }
 function isCorrect(q,answer){return q.type==="matching"?Array.isArray(answer)&&answer.length===q.k.length&&q.k.every((v,i)=>answer[i]===v):answer===q.k}
 function answerLabel(q,answer){return q.type==="matching"?q.terms.map((term,i)=>term+" → "+(answer&&answer[i]!==null&&answer[i]!==undefined?q.a[answer[i]]:"Not answered")).join("; "):(answer===null||answer===undefined?"Not answered":q.a[answer])}
@@ -70,7 +71,7 @@ function finish(){
  $("finalCorrect").textContent=correct;$("finalTotal").textContent=quiz.length;$("finalPct").textContent=Math.round(correct/quiz.length*100)+"%";
  $("review").innerHTML="<h3>Review</h3>"+quiz.map((q,i)=>'<div class="chapter"><strong>'+(i+1)+". "+q.q.replace(/</g,"&lt;")+'</strong><p class="small">Your answer: '+answerLabel(q,answers[i])+' · Correct: '+answerLabel(q,q.k)+'</p><p>'+q.e+'</p>'+(q.type==='tf'&&answers[i]!==q.k&&q.fix?'<p><strong>Correction:</strong> '+q.fix+'</p>':'')+'<p class="source">'+q.s+'</p></div>').join("");
 }
-$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{if(mode==="exam"){if(quiz[idx].type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.length&&sels.every(el=>el.value!==""))answers[idx]=sels.map(el=>Number(el.value))}else{let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}}idx++;checked=false;render()};
+$("mode").addEventListener("change",updateStartLabel);updateStartLabel();$("start").onclick=start;$("submit").onclick=submit;$("next").onclick=()=>{if(mode==="exam"){if(quiz[idx].type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.length&&sels.every(el=>el.value!==""))answers[idx]=sels.map(el=>Number(el.value))}else{let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}}idx++;checked=false;render()};
 $("finish").onclick=()=>{if(mode==="exam"){if(quiz[idx].type==="matching"){let sels=[...$("choices").querySelectorAll(".match-select")];if(sels.length&&sels.every(el=>el.value!==""))answers[idx]=sels.map(el=>Number(el.value))}else{let pick=document.querySelector('input[name="answer"]:checked');if(pick)answers[idx]=Number(pick.value)}}finish()};
 $("again").onclick=()=>{$("results").classList.add("hide");$("welcome").classList.remove("hide")};
 $("reset").onclick=()=>{$("quiz").classList.add("hide");$("results").classList.add("hide");$("welcome").classList.remove("hide");idx=0;answers=[]};</script></body></html>
