@@ -30,7 +30,8 @@ jobs:
       - name: Prepare site files
         run: |
           mkdir _site
-          cp index.html _site/index.html
+          cp -R index.html world-history world-history.html _site/
+          if [ -f .nojekyll ]; then cp .nojekyll _site/.nojekyll; fi
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
