@@ -17,7 +17,1708 @@
 <div id="results" class="hide"><h2>Practice results</h2><div class="stats"><div class="stat"><span class="small">Correct</span><strong id="finalCorrect">0</strong></div><div class="stat"><span class="small">Total</span><strong id="finalTotal">0</strong></div><div class="stat"><span class="small">Result</span><strong id="finalPct">0%</strong></div></div><div id="review"></div><div class="actions"><button class="primary" id="again">Try another quiz</button></div></div></section></div></main>
 <footer class="footer">Metropolitan School · Grade 9 World History Practice · Second Partial</footer>
 <script>
-const BANK=[{"c":8,"t":"Enlightenment Principles","type":"mc","q":"What did Enlightenment thinkers known as Philosophes generally champion?","a":["Reason over tradition, science over superstition, and tolerance over dogma","Divine right over popular consent and censorship over debate","Military power over education and religious uniformity","Inherited privilege over legal and social reform"],"k":0,"e":"They emphasized rational thought, scientific inquiry, and tolerance.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which principle refers to faith in human rationality and society's ability to improve through knowledge?","a":["Religious Toleration","Social Reform","Scientific Method","Reason and Progress"],"k":3,"e":"Reason and Progress means confidence in human rationality and social improvement through knowledge.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"What did the Scientific Method apply to understand the natural and social world?","a":["Royal tradition","Empirical observation","Religious dogma","Inherited authority"],"k":1,"e":"The document defines it through empirical observation.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which principle challenged orthodoxy and supported freedom of conscience and belief?","a":["Social Reform","Reason and Progress","Religious Toleration","Imperial Centralization"],"k":2,"e":"Religious Toleration challenged orthodoxy and advocated freedom of conscience.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Who wrote The Spirit of Laws and introduced the separation of powers?","a":["Voltaire","Jean-Jacques Rousseau","Denis Diderot","Montesquieu"],"k":3,"e":"Montesquieu connected executive, legislative, and judicial powers as a safeguard against tyranny.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which idea did Voltaire champion?","a":["Freedom of thought","Hereditary rule without limits","Expansion of serfdom","Abolition of public debate"],"k":0,"e":"Voltaire criticized religious intolerance and championed freedom of thought.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"According to Rousseau, from where does legitimate government derive?","a":["Divine right of kings","The General Will of the people","The authority of the Catholic Church","The interests of the nobility alone"],"k":1,"e":"Rousseau argued that legitimate government derives from the people's General Will.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"mc","q":"Who edited the Encyclopédie?","a":["Thomas Paine","Edmund Burke","Denis Diderot","Thomas Jefferson"],"k":2,"e":"The document identifies Denis Diderot as its editor.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"mc","q":"What did salons provide during the Enlightenment?","a":["Intellectual gatherings and spaces for debate","Military training for colonial forces","Government offices for tax collection","Religious courts enforcing orthodoxy"],"k":0,"e":"Salons were intellectual gatherings hosted by influential people such as Madame Geoffrin.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"How did monarchs use Enlightenment language to justify their rule?","a":["By granting universal voting rights","By abolishing centralized government","By emphasizing usefulness to the state rather than divine right","By transferring power to colonial assemblies"],"k":2,"e":"They centralized power and promoted reforms without granting political liberty.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Which Austrian ruler abolished serfdom and decreed religious toleration?","a":["Frederick the Great","Joseph II","Louis XVI","Catherine the Great"],"k":1,"e":"Joseph II also imposed tax equality; many reforms were later undone.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Which Russian ruler strengthened the nobility after suppressing the Pugachev Rebellion?","a":["Catherine the Great","Joseph II","Voltaire","Montesquieu"],"k":0,"e":"The document says Catherine strengthened noble power and serfs' conditions worsened.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"What were rotten boroughs?","a":["Industrial cities with too many parliamentary seats","Constituencies that held seats while industrial cities such as Manchester had none","Colonies that refused to pay taxes","Regions governed by the East India Company"],"k":1,"e":"The document contrasts rotten boroughs with industrial cities lacking representation.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"What did the Act of Union (1801) do, according to the document?","a":["It absorbed the Irish Parliament","It granted American independence","It created the Continental Army","It abolished Parliament"],"k":0,"e":"The Act of Union absorbed the Irish Parliament.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"Why did Britain impose new taxes on its American colonies after the Seven Years' War?","a":["To fund the Encyclopédie","To make the colonies help pay for defense","To abolish colonial assemblies","To finance the Treaty of Paris"],"k":1,"e":"The Stamp Act and Townshend Duties were imposed to help pay for defense.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"What did colonists do during the Boston Tea Party in 1773?","a":["They signed the Treaty of Paris","They dumped British tea into Boston Harbor","They appointed George Washington king","They closed the port of London"],"k":1,"e":"The protest involved dumping British tea into Boston Harbor.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"Who was appointed to lead the Continental Army?","a":["Thomas Paine","Edmund Burke","George Washington","Denis Diderot"],"k":2,"e":"The Second Continental Congress appointed George Washington.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"Who wrote Common Sense (1776)?","a":["Thomas Jefferson","Thomas Paine","George Washington","John Wilkes"],"k":1,"e":"Thomas Paine's pamphlet galvanized public opinion for independence.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"Which battle in 1777 convinced France to enter the American war?","a":["Lexington","Concord","Boston Tea Party","Saratoga"],"k":3,"e":"The Battle of Saratoga convinced France to enter the war.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"Which treaty granted American independence in 1783?","a":["Act of Union","Treaty of Paris","The Social Contract","Treaty of Westphalia"],"k":1,"e":"The Treaty of Paris (1783) granted American independence.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"American Consequences","type":"mc","q":"What contradiction does the document identify in the new American republic?","a":["It proclaimed equality while slavery persisted","It rejected all written constitutions","It restored British rule","It abolished all state churches"],"k":0,"e":"Slavery persisted despite declarations of equality.","s":"CH8 The Age of Enlightenment.pdf — page 9","origin":"slides"},{"c":8,"t":"Worldwide Influence","type":"mc","q":"Which movements are named as inspired by the American experiment?","a":["Only the Russian reforms","The French Revolution and Latin American independence movements","The Seven Years' War and Pugachev Rebellion","The Act of Union and the Glorious Revolution"],"k":1,"e":"The document names France (1789) and Latin America (1810s–1820s).","s":"CH8 The Age of Enlightenment.pdf — page 10","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"tf","q":"The Philosophes generally favored reason over tradition and science over superstition.","a":["True","False"],"k":0,"e":"These are central Enlightenment commitments in the document.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"tf","q":"Voltaire defended religious intolerance and opposed freedom of thought.","a":["True","False"],"k":1,"e":"Voltaire criticized religious intolerance and championed freedom of thought.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Joseph II abolished serfdom, decreed religious toleration, and imposed tax equality.","a":["True","False"],"k":0,"e":"All three measures are listed on page 5.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Britain","type":"tf","q":"The Act of Union (1801) absorbed the Irish Parliament.","a":["True","False"],"k":0,"e":"The document lists this as an example of imperial centralization.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"tf","q":"The Intolerable Acts closed Boston's port and revoked Massachusetts' charter.","a":["True","False"],"k":0,"e":"These were the British response described after the Boston Tea Party.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"tf","q":"The Treaty of Paris (1783) granted American independence.","a":["True","False"],"k":0,"e":"The document states this directly.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"American Consequences","type":"tf","q":"The American Revolution immediately abolished slavery throughout the new nation.","a":["True","False"],"k":1,"e":"The document emphasizes that slavery persisted.","s":"CH8 The Age of Enlightenment.pdf — page 9","origin":"slides"},{"c":8,"t":"Worldwide Influence","type":"tf","q":"The American Revolution demonstrated that Enlightenment ideas about self-government and natural rights could become political reality.","a":["True","False"],"k":0,"e":"This is the conclusion presented on page 10.","s":"CH8 The Age of Enlightenment.pdf — page 10","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which contrast best describes the intellectual position of the Philosophes?","a":["Reason rather than tradition; science rather than superstition; tolerance rather than dogma","Tradition rather than reason; superstition rather than science; dogma rather than tolerance","Military authority rather than inquiry; inherited rank rather than reform","Religious uniformity rather than freedom of conscience"],"k":0,"e":"The document summarizes the Philosophes through these three contrasts.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"What did Enlightenment thinkers believe knowledge could make possible?","a":["The permanent preservation of inherited social arrangements","The improvement and perfectibility of human society","The replacement of observation with tradition","The end of all political institutions"],"k":1,"e":"They believed society could be perfected through rational thought and reform.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which activity most directly illustrates the Scientific Method as defined in the chapter?","a":["Accepting a claim solely because it is traditional","Using empirical observation to investigate a natural or social question","Treating religious dogma as the only source of knowledge","Avoiding evidence when evaluating an explanation"],"k":1,"e":"The chapter defines the Scientific Method as applying empirical observation.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which example best represents Religious Toleration?","a":["Requiring everyone to follow one official belief","Allowing freedom of conscience and belief","Preventing criticism of religious institutions","Giving legal authority only to religious leaders"],"k":1,"e":"Religious Toleration challenged orthodoxy and advocated freedom of conscience and belief.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"A thinker criticizes traditional authority and calls for changes to laws and economic arrangements. Which principle does this illustrate?","a":["Reason and Progress","Scientific Method","Social Reform","Imperial Centralization"],"k":2,"e":"Social Reform involved demanding legal, political, and economic change.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"mc","q":"Which statement is most consistent with the Enlightenment's confidence in human rationality?","a":["Society can improve through knowledge and reasoned reform.","Social conditions cannot be changed by human action.","Tradition should always override empirical evidence.","Political authority should never be questioned."],"k":0,"e":"Reason and Progress expressed faith in human rationality and society's improvement through knowledge.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which branch of government is NOT one of the three in Montesquieu's separation-of-powers model?","a":["Executive","Legislative","Judicial","Ecclesiastical"],"k":3,"e":"Montesquieu identified executive, legislative, and judicial branches.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which political danger was Montesquieu's separation of powers intended to guard against?","a":["Tyranny","Public discussion","Scientific investigation","Religious toleration"],"k":0,"e":"The chapter describes separation of powers as a safeguard against tyranny.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which philosopher criticized religious intolerance and the Catholic Church while championing freedom of thought?","a":["Rousseau","Voltaire","Montesquieu","Diderot"],"k":1,"e":"These positions are attributed to Voltaire in the chapter.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which statement accurately distinguishes Rousseau's argument from a simple defense of monarchy?","a":["Legitimate government derives from the General Will of the people.","Legitimate government derives only from hereditary royal authority.","Legitimate government derives from the control of the nobility.","Legitimate government derives from the authority of salons."],"k":0,"e":"Rousseau located legitimate government in the General Will of the people.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"mc","q":"Which pairing is correct?","a":["Montesquieu — The Social Contract","Voltaire — The Spirit of Laws","Rousseau — The Social Contract","Diderot — Common Sense"],"k":2,"e":"The Social Contract is Rousseau's work; The Spirit of Laws is associated with Montesquieu.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"mc","q":"What made the Encyclopédie significant to the spread of Enlightenment thought?","a":["It gathered human knowledge and presented it from a critical, reformist perspective.","It limited knowledge to royal officials and discouraged criticism.","It replaced all newspapers with government announcements.","It focused exclusively on military strategy."],"k":0,"e":"The work compiled human knowledge while challenging traditional assumptions.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"mc","q":"What role did influential women such as Madame Geoffrin play in Enlightenment culture?","a":["They hosted intellectual gatherings that provided spaces for debate.","They commanded the Continental Army.","They drafted the Declaration of Independence.","They administered the East India Company."],"k":0,"e":"The chapter identifies salons hosted by influential women as spaces for debate.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"mc","q":"Which development helped create a wider public sphere for political discourse?","a":["A growing reading public consuming newspapers and journals","The disappearance of newspapers and journals","The restriction of all debate to royal courts","The end of intellectual gatherings"],"k":0,"e":"The chapter connects newspapers, journals, and a growing reading public to the public sphere.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Why did some European monarchs adopt Enlightenment language to justify their rule?","a":["To present their authority as useful to the state rather than based only on divine right","To announce the immediate end of monarchy","To transfer all political power to elected assemblies","To give every subject unrestricted political liberty"],"k":0,"e":"The chapter says monarchs justified rule by usefulness to the state, while retaining centralized power.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Which combination best describes Enlightened Despotism in the chapter?","a":["Centralized power, legal reforms, and economic development without political liberty","Decentralized power, universal suffrage, and the abolition of monarchy","Religious uniformity, rejection of law, and economic isolation","Popular sovereignty and the immediate abolition of social hierarchy"],"k":0,"e":"These monarchs pursued reforms but did not grant political liberty to their subjects.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"What happened when Louis XVI reversed ministers' reform efforts in France?","a":["Resistance by privileged classes contributed to a fiscal crisis that precipitated revolution.","The French monarchy immediately gained stable finances.","The parlements were permanently abolished without resistance.","France granted independence to its American colonies."],"k":0,"e":"The chapter links resistance to reforms and the fiscal crisis preceding revolution.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Which outcome followed Joseph II's abrupt reform methods in Austria?","a":["They provoked resistance, and most reforms were undone after his death.","They ended all opposition and remained fully intact.","They strengthened the Junker aristocracy in Prussia.","They led directly to the Treaty of Paris."],"k":0,"e":"The chapter says his abrupt methods provoked resistance and most reforms were undone.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"Which description best fits Prussia under Frederick the Great in the chapter?","a":["Some reforms were promoted, but society remained rigidly stratified.","Serfdom was abolished and social hierarchy disappeared.","The Junker aristocracy lost all influence over serfs.","The country adopted the American federal Constitution."],"k":0,"e":"Religious freedom and codified laws coexisted with a rigid social hierarchy dominated by Junkers.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"mc","q":"What did Catherine the Great do after suppressing the Pugachev Rebellion?","a":["Strengthened the nobility, while conditions for serfs worsened.","Abolished serfdom and imposed tax equality.","Transferred power to elected peasant assemblies.","Granted independence to the Russian serfs."],"k":0,"e":"The chapter describes strengthened noble power and worsening conditions for serfs.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"Which two figures are identified as critics of corruption and lack of representation in Britain?","a":["John Wilkes and Edmund Burke","Voltaire and Rousseau","Thomas Paine and Thomas Jefferson","Montesquieu and Denis Diderot"],"k":0,"e":"The chapter names John Wilkes and Edmund Burke in the domestic reform movement.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"What contrast illustrates the problem of parliamentary representation in Britain?","a":["Rotten boroughs held seats while industrial cities such as Manchester had none.","Manchester held many seats while all older boroughs had none.","The Irish Parliament controlled seats in every British city.","The East India Company appointed all members of Parliament."],"k":0,"e":"The chapter uses rotten boroughs and Manchester to illustrate unequal representation.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"Which event is dated 1745 in the chapter's examples of imperial centralization?","a":["Suppressing Scottish Highland clans","Absorbing the Irish Parliament","Bringing the East India Company under Parliamentary control","Passing the Act of Union"],"k":0,"e":"The chapter lists suppression of Scottish Highland clans in 1745.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"mc","q":"Which sequence correctly matches the British imperial actions with their dates?","a":["East India Company under Parliamentary control (1773); Act of Union (1801)","Act of Union (1773); East India Company under Parliamentary control (1801)","Scottish clans suppressed (1801); Act of Union (1745)","Manchester representation (1773); Irish independence (1801)"],"k":0,"e":"The chapter dates Parliamentary control of the East India Company to 1773 and the Act of Union to 1801.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"What did colonists argue about the Stamp Act and Townshend Duties?","a":["The taxes violated their rights as Englishmen.","The taxes granted them representation in Parliament.","The taxes were imposed by France after Saratoga.","The taxes abolished the colonial assemblies."],"k":0,"e":"The chapter says colonists argued the taxes violated their rights as Englishmen.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"Which event prompted Britain's imposition of new taxes to help pay for colonial defense?","a":["The Seven Years' War","The Battle of Saratoga","The Treaty of Paris","The Boston Tea Party"],"k":0,"e":"The chapter places the new taxes after the Seven Years' War.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"Which sequence correctly describes the events in 1773?","a":["Colonists dumped tea in Boston Harbor; Britain responded with the Intolerable Acts.","Britain signed the Treaty of Paris; colonists declared independence.","France entered the war; the Second Continental Congress appointed Washington.","The Declaration was drafted; Parliament passed the Act of Union."],"k":0,"e":"The chapter links the Boston Tea Party to the British response known as the Intolerable Acts.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"What was the immediate military significance of Lexington and Concord in 1775?","a":["Fighting erupted between colonial militiamen and British troops.","The British surrendered to the French army.","The Treaty of Paris formally ended the war.","The Continental Army won the Battle of Saratoga."],"k":0,"e":"The chapter describes fighting between colonial militiamen and British troops.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"mc","q":"Which body appointed George Washington to lead the Continental Army?","a":["The Second Continental Congress","The British Parliament","The French National Assembly","The East India Company"],"k":0,"e":"The Second Continental Congress made the appointment described on page 7.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"How did Thomas Paine present the case for independence in Common Sense?","a":["In clear, accessible language intended to galvanize public opinion","Through a technical legal code for the British Parliament","By defending the continuation of colonial taxation","By arguing that independence should be delayed indefinitely"],"k":0,"e":"The chapter describes the pamphlet as clear and accessible and says it galvanized public opinion.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"Which Enlightenment idea is directly reflected in the Declaration's statement of unalienable rights?","a":["Natural rights","Divine right","Primogeniture","Imperial centralization"],"k":0,"e":"The document presents Life, Liberty, and the pursuit of Happiness as unalienable rights.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"What did France's entry into the American war provide that the chapter describes as decisive?","a":["Military and financial support","A new British tax system","Control over the Continental Congress","A replacement for the Declaration of Independence"],"k":0,"e":"The chapter explicitly identifies French military and financial support as decisive.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"mc","q":"Which event is associated with the year 1783?","a":["The Treaty of Paris granting American independence","The Boston Tea Party","The Battle of Saratoga","The adoption of the U.S. Constitution"],"k":0,"e":"The Treaty of Paris of 1783 granted American independence.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"American Consequences","type":"mc","q":"Which political changes are listed as part of the American Revolution's consequences?","a":["Written state constitutions with bills of rights and a federal Constitution","Restoration of British colonial rule and royal decrees","Abolition of all state governments and written laws","Creation of a hereditary aristocracy"],"k":0,"e":"The chapter describes written state constitutions, bills of rights, and the federal Constitution.","s":"CH8 The Age of Enlightenment.pdf — page 9","origin":"slides"},{"c":8,"t":"American Consequences","type":"mc","q":"Which changes contributed to a more egalitarian society, within limits, according to the chapter?","a":["Abolition of primogeniture, disestablishment of state churches, and expanded voting rights for white males","Restoration of primogeniture and expansion of state churches","Universal voting rights regardless of race or status","Abolition of all state constitutions"],"k":0,"e":"These are the democratic expansions specifically listed on page 9.","s":"CH8 The Age of Enlightenment.pdf — page 9","origin":"slides"},{"c":8,"t":"American Consequences","type":"mc","q":"Why does the chapter describe slavery as a contradiction in the new American republic?","a":["The nation proclaimed equality while slavery continued.","The Constitution rejected separation of powers.","The colonies refused to declare independence.","The Treaty of Paris restored British rule."],"k":0,"e":"The chapter explicitly contrasts claims of equality with the persistence of slavery.","s":"CH8 The Age of Enlightenment.pdf — page 9","origin":"slides"},{"c":8,"t":"Worldwide Influence","type":"mc","q":"Which regions are specifically named as influenced by the American Revolution?","a":["France and Latin America","Only Britain and Prussia","Austria and Russia alone","Scotland and Ireland only"],"k":0,"e":"The chapter names France (1789) and Latin America (1810s–1820s).","s":"CH8 The Age of Enlightenment.pdf — page 10","origin":"slides"},{"c":8,"t":"Worldwide Influence","type":"mc","q":"What did the American experiment provide to other revolutionary movements?","a":["A living model of a functioning republic based on reason, liberty, and self-governance","Proof that Enlightenment ideas could not be put into practice","A model for restoring divine-right monarchy","A plan for expanding European serfdom"],"k":0,"e":"The chapter describes the United States as a living model of a functioning republic.","s":"CH8 The Age of Enlightenment.pdf — page 10","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"tf","q":"The Philosophes believed rational thought and reform could improve human society.","a":["True","False"],"k":0,"e":"The chapter says they believed society could be perfected through rational thought and reform.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"tf","q":"The Scientific Method is described as relying on empirical observation.","a":["True","False"],"k":0,"e":"The chapter defines it as applying empirical observation to the natural and social world.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Enlightenment Principles","type":"tf","q":"Social Reform meant protecting traditional authority from legal and political criticism.","a":["True","False"],"k":1,"e":"Social Reform involved criticizing traditional authority and demanding legal, political, and economic change.","s":"CH8 The Age of Enlightenment.pdf — page 2","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"tf","q":"Montesquieu's separation of powers was presented as a safeguard against tyranny.","a":["True","False"],"k":0,"e":"The three branches were executive, legislative, and judicial.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"tf","q":"Voltaire believed enlightened monarchs could enact necessary reforms.","a":["True","False"],"k":0,"e":"The chapter attributes this belief to Voltaire.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Great Philosophes","type":"tf","q":"Rousseau argued that legitimate government derives from the General Will of the people.","a":["True","False"],"k":0,"e":"This is the central political argument attributed to Rousseau.","s":"CH8 The Age of Enlightenment.pdf — page 3","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"tf","q":"The Encyclopédie was edited by Denis Diderot and challenged traditional assumptions.","a":["True","False"],"k":0,"e":"The chapter describes its critical, reformist perspective.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"tf","q":"Salons were intellectual gatherings that provided spaces for debate.","a":["True","False"],"k":0,"e":"The chapter cites salons hosted by influential women, including Madame Geoffrin.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Spreading Ideas","type":"tf","q":"The growing readership of newspapers and journals contributed to a public sphere for political discourse.","a":["True","False"],"k":0,"e":"This relationship is described on page 4.","s":"CH8 The Age of Enlightenment.pdf — page 4","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Enlightened monarchs generally granted political liberty while centralizing power.","a":["True","False"],"k":1,"e":"The chapter emphasizes that reforms did not grant political liberty to subjects.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Joseph II's reforms in Austria included religious toleration and tax equality.","a":["True","False"],"k":0,"e":"Both measures are listed alongside the abolition of serfdom.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Most of Joseph II's reforms survived unchanged after his death.","a":["True","False"],"k":1,"e":"The chapter says most reforms were undone after his death.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Frederick the Great's Prussia remained socially stratified despite some reforms.","a":["True","False"],"k":0,"e":"The Junker aristocracy continued to dominate serfs.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Enlightened Despotism","type":"tf","q":"Catherine the Great strengthened the nobility after suppressing the Pugachev Rebellion.","a":["True","False"],"k":0,"e":"The chapter also notes worsening conditions for serfs.","s":"CH8 The Age of Enlightenment.pdf — page 5","origin":"slides"},{"c":8,"t":"Britain","type":"tf","q":"John Wilkes and Edmund Burke criticized corruption and lack of representation in Britain.","a":["True","False"],"k":0,"e":"Both figures are named in the domestic reform movement.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"tf","q":"Significant British parliamentary reform was delayed until 1832.","a":["True","False"],"k":0,"e":"The date is stated on page 6.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"Britain","type":"tf","q":"The British government brought the East India Company under Parliamentary control in 1773.","a":["True","False"],"k":0,"e":"This is listed as an example of imperial centralization.","s":"CH8 The Age of Enlightenment.pdf — page 6","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"tf","q":"The Stamp Act and Townshend Duties were imposed after the Seven Years' War.","a":["True","False"],"k":0,"e":"The chapter links the taxes to the cost of colonial defense.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"tf","q":"The Intolerable Acts granted Boston a more open port and restored Massachusetts' charter.","a":["True","False"],"k":1,"e":"They closed Boston's port and revoked Massachusetts' charter.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"American Revolution Origins","type":"tf","q":"The Second Continental Congress appointed George Washington to lead the Continental Army.","a":["True","False"],"k":0,"e":"This appointment is described in the 1775 timeline.","s":"CH8 The Age of Enlightenment.pdf — page 7","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"tf","q":"The Battle of Saratoga helped convince France to enter the American war.","a":["True","False"],"k":0,"e":"The chapter dates Saratoga to 1777 and identifies it as the catalyst for French entry.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"},{"c":8,"t":"Independence and Victory","type":"tf","q":"The Treaty of Paris of 1783 granted American independence.","a":["True","False"],"k":0,"e":"The chapter states this directly.","s":"CH8 The Age of Enlightenment.pdf — page 8","origin":"slides"}];
+const BANK=[
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "What did Enlightenment thinkers known as Philosophes generally champion?",
+    "a": [
+      "Reason over tradition, science over superstition, and tolerance over dogma",
+      "Divine right over popular consent and censorship over debate",
+      "Military power over education and religious uniformity",
+      "Inherited privilege over legal and social reform"
+    ],
+    "k": 0,
+    "e": "They emphasized rational thought, scientific inquiry, and tolerance.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which principle refers to faith in human rationality and society's ability to improve through knowledge?",
+    "a": [
+      "Religious Toleration",
+      "Social Reform",
+      "Scientific Method",
+      "Reason and Progress"
+    ],
+    "k": 3,
+    "e": "Reason and Progress means confidence in human rationality and social improvement through knowledge.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "What did the Scientific Method apply to understand the natural and social world?",
+    "a": [
+      "Royal tradition",
+      "Empirical observation",
+      "Religious dogma",
+      "Inherited authority"
+    ],
+    "k": 1,
+    "e": "The document defines it through empirical observation.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which principle challenged orthodoxy and supported freedom of conscience and belief?",
+    "a": [
+      "Social Reform",
+      "Reason and Progress",
+      "Religious Toleration",
+      "Imperial Centralization"
+    ],
+    "k": 2,
+    "e": "Religious Toleration challenged orthodoxy and advocated freedom of conscience.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Who wrote The Spirit of Laws and introduced the separation of powers?",
+    "a": [
+      "Voltaire",
+      "Jean-Jacques Rousseau",
+      "Denis Diderot",
+      "Montesquieu"
+    ],
+    "k": 3,
+    "e": "Montesquieu connected executive, legislative, and judicial powers as a safeguard against tyranny.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which idea did Voltaire champion?",
+    "a": [
+      "Freedom of thought",
+      "Hereditary rule without limits",
+      "Expansion of serfdom",
+      "Abolition of public debate"
+    ],
+    "k": 0,
+    "e": "Voltaire criticized religious intolerance and championed freedom of thought.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "According to Rousseau, from where does legitimate government derive?",
+    "a": [
+      "Divine right of kings",
+      "The General Will of the people",
+      "The authority of the Catholic Church",
+      "The interests of the nobility alone"
+    ],
+    "k": 1,
+    "e": "Rousseau argued that legitimate government derives from the people's General Will.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "Who edited the Encyclopédie?",
+    "a": [
+      "Thomas Paine",
+      "Edmund Burke",
+      "Denis Diderot",
+      "Thomas Jefferson"
+    ],
+    "k": 2,
+    "e": "The document identifies Denis Diderot as its editor.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "What did salons provide during the Enlightenment?",
+    "a": [
+      "Intellectual gatherings and spaces for debate",
+      "Military training for colonial forces",
+      "Government offices for tax collection",
+      "Religious courts enforcing orthodoxy"
+    ],
+    "k": 0,
+    "e": "Salons were intellectual gatherings hosted by influential people such as Madame Geoffrin.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "How did monarchs use Enlightenment language to justify their rule?",
+    "a": [
+      "By granting universal voting rights",
+      "By abolishing centralized government",
+      "By emphasizing usefulness to the state rather than divine right",
+      "By transferring power to colonial assemblies"
+    ],
+    "k": 2,
+    "e": "They centralized power and promoted reforms without granting political liberty.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which Austrian ruler abolished serfdom and decreed religious toleration?",
+    "a": [
+      "Frederick the Great",
+      "Joseph II",
+      "Louis XVI",
+      "Catherine the Great"
+    ],
+    "k": 1,
+    "e": "Joseph II also imposed tax equality; many reforms were later undone.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which Russian ruler strengthened the nobility after suppressing the Pugachev Rebellion?",
+    "a": [
+      "Catherine the Great",
+      "Joseph II",
+      "Voltaire",
+      "Montesquieu"
+    ],
+    "k": 0,
+    "e": "The document says Catherine strengthened noble power and serfs' conditions worsened.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "What were rotten boroughs?",
+    "a": [
+      "Industrial cities with too many parliamentary seats",
+      "Constituencies that held seats while industrial cities such as Manchester had none",
+      "Colonies that refused to pay taxes",
+      "Regions governed by the East India Company"
+    ],
+    "k": 1,
+    "e": "The document contrasts rotten boroughs with industrial cities lacking representation.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "What did the Act of Union (1801) do, according to the document?",
+    "a": [
+      "It absorbed the Irish Parliament",
+      "It granted American independence",
+      "It created the Continental Army",
+      "It abolished Parliament"
+    ],
+    "k": 0,
+    "e": "The Act of Union absorbed the Irish Parliament.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Why did Britain impose new taxes on its American colonies after the Seven Years' War?",
+    "a": [
+      "To fund the Encyclopédie",
+      "To make the colonies help pay for defense",
+      "To abolish colonial assemblies",
+      "To finance the Treaty of Paris"
+    ],
+    "k": 1,
+    "e": "The Stamp Act and Townshend Duties were imposed to help pay for defense.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "What did colonists do during the Boston Tea Party in 1773?",
+    "a": [
+      "They signed the Treaty of Paris",
+      "They dumped British tea into Boston Harbor",
+      "They appointed George Washington king",
+      "They closed the port of London"
+    ],
+    "k": 1,
+    "e": "The protest involved dumping British tea into Boston Harbor.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Who was appointed to lead the Continental Army?",
+    "a": [
+      "Thomas Paine",
+      "Edmund Burke",
+      "George Washington",
+      "Denis Diderot"
+    ],
+    "k": 2,
+    "e": "The Second Continental Congress appointed George Washington.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Who wrote Common Sense (1776)?",
+    "a": [
+      "Thomas Jefferson",
+      "Thomas Paine",
+      "George Washington",
+      "John Wilkes"
+    ],
+    "k": 1,
+    "e": "Thomas Paine's pamphlet galvanized public opinion for independence.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Which battle in 1777 convinced France to enter the American war?",
+    "a": [
+      "Lexington",
+      "Concord",
+      "Boston Tea Party",
+      "Saratoga"
+    ],
+    "k": 3,
+    "e": "The Battle of Saratoga convinced France to enter the war.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Which treaty granted American independence in 1783?",
+    "a": [
+      "Act of Union",
+      "Treaty of Paris",
+      "The Social Contract",
+      "Treaty of Westphalia"
+    ],
+    "k": 1,
+    "e": "The Treaty of Paris (1783) granted American independence.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "What contradiction does the document identify in the new American republic?",
+    "a": [
+      "It proclaimed equality while slavery persisted",
+      "It rejected all written constitutions",
+      "It restored British rule",
+      "It abolished all state churches"
+    ],
+    "k": 0,
+    "e": "Slavery persisted despite declarations of equality.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Worldwide Influence",
+    "type": "mc",
+    "q": "Which movements are named as inspired by the American experiment?",
+    "a": [
+      "Only the Russian reforms",
+      "The French Revolution and Latin American independence movements",
+      "The Seven Years' War and Pugachev Rebellion",
+      "The Act of Union and the Glorious Revolution"
+    ],
+    "k": 1,
+    "e": "The document names France (1789) and Latin America (1810s–1820s).",
+    "s": "CH8 The Age of Enlightenment.pdf — page 10",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "tf",
+    "q": "The Philosophes generally favored reason over tradition and science over superstition.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "These are central Enlightenment commitments in the document.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "tf",
+    "q": "Voltaire defended religious intolerance and opposed freedom of thought.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "Voltaire criticized religious intolerance and championed freedom of thought.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Joseph II abolished serfdom, decreed religious toleration, and imposed tax equality.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "All three measures are listed on page 5.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "tf",
+    "q": "The Act of Union (1801) absorbed the Irish Parliament.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The document lists this as an example of imperial centralization.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "tf",
+    "q": "The Intolerable Acts closed Boston's port and revoked Massachusetts' charter.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "These were the British response described after the Boston Tea Party.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "tf",
+    "q": "The Treaty of Paris (1783) granted American independence.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The document states this directly.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "tf",
+    "q": "The American Revolution immediately abolished slavery throughout the new nation.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "The document emphasizes that slavery persisted.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Worldwide Influence",
+    "type": "tf",
+    "q": "The American Revolution demonstrated that Enlightenment ideas about self-government and natural rights could become political reality.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "This is the conclusion presented on page 10.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 10",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which contrast best describes the intellectual position of the Philosophes?",
+    "a": [
+      "Reason rather than tradition; science rather than superstition; tolerance rather than dogma",
+      "Tradition rather than reason; superstition rather than science; dogma rather than tolerance",
+      "Military authority rather than inquiry; inherited rank rather than reform",
+      "Religious uniformity rather than freedom of conscience"
+    ],
+    "k": 0,
+    "e": "The document summarizes the Philosophes through these three contrasts.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "What did Enlightenment thinkers believe knowledge could make possible?",
+    "a": [
+      "The permanent preservation of inherited social arrangements",
+      "The improvement and perfectibility of human society",
+      "The replacement of observation with tradition",
+      "The end of all political institutions"
+    ],
+    "k": 1,
+    "e": "They believed society could be perfected through rational thought and reform.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which activity most directly illustrates the Scientific Method as defined in the chapter?",
+    "a": [
+      "Accepting a claim solely because it is traditional",
+      "Using empirical observation to investigate a natural or social question",
+      "Treating religious dogma as the only source of knowledge",
+      "Avoiding evidence when evaluating an explanation"
+    ],
+    "k": 1,
+    "e": "The chapter defines the Scientific Method as applying empirical observation.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which example best represents Religious Toleration?",
+    "a": [
+      "Requiring everyone to follow one official belief",
+      "Allowing freedom of conscience and belief",
+      "Preventing criticism of religious institutions",
+      "Giving legal authority only to religious leaders"
+    ],
+    "k": 1,
+    "e": "Religious Toleration challenged orthodoxy and advocated freedom of conscience and belief.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "A thinker criticizes traditional authority and calls for changes to laws and economic arrangements. Which principle does this illustrate?",
+    "a": [
+      "Reason and Progress",
+      "Scientific Method",
+      "Social Reform",
+      "Imperial Centralization"
+    ],
+    "k": 2,
+    "e": "Social Reform involved demanding legal, political, and economic change.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "Which statement is most consistent with the Enlightenment's confidence in human rationality?",
+    "a": [
+      "Society can improve through knowledge and reasoned reform.",
+      "Social conditions cannot be changed by human action.",
+      "Tradition should always override empirical evidence.",
+      "Political authority should never be questioned."
+    ],
+    "k": 0,
+    "e": "Reason and Progress expressed faith in human rationality and society's improvement through knowledge.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which branch of government is NOT one of the three in Montesquieu's separation-of-powers model?",
+    "a": [
+      "Executive",
+      "Legislative",
+      "Judicial",
+      "Ecclesiastical"
+    ],
+    "k": 3,
+    "e": "Montesquieu identified executive, legislative, and judicial branches.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which political danger was Montesquieu's separation of powers intended to guard against?",
+    "a": [
+      "Tyranny",
+      "Public discussion",
+      "Scientific investigation",
+      "Religious toleration"
+    ],
+    "k": 0,
+    "e": "The chapter describes separation of powers as a safeguard against tyranny.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which philosopher criticized religious intolerance and the Catholic Church while championing freedom of thought?",
+    "a": [
+      "Rousseau",
+      "Voltaire",
+      "Montesquieu",
+      "Diderot"
+    ],
+    "k": 1,
+    "e": "These positions are attributed to Voltaire in the chapter.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which statement accurately distinguishes Rousseau's argument from a simple defense of monarchy?",
+    "a": [
+      "Legitimate government derives from the General Will of the people.",
+      "Legitimate government derives only from hereditary royal authority.",
+      "Legitimate government derives from the control of the nobility.",
+      "Legitimate government derives from the authority of salons."
+    ],
+    "k": 0,
+    "e": "Rousseau located legitimate government in the General Will of the people.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which pairing is correct?",
+    "a": [
+      "Montesquieu — The Social Contract",
+      "Voltaire — The Spirit of Laws",
+      "Rousseau — The Social Contract",
+      "Diderot — Common Sense"
+    ],
+    "k": 2,
+    "e": "The Social Contract is Rousseau's work; The Spirit of Laws is associated with Montesquieu.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "What made the Encyclopédie significant to the spread of Enlightenment thought?",
+    "a": [
+      "It gathered human knowledge and presented it from a critical, reformist perspective.",
+      "It limited knowledge to royal officials and discouraged criticism.",
+      "It replaced all newspapers with government announcements.",
+      "It focused exclusively on military strategy."
+    ],
+    "k": 0,
+    "e": "The work compiled human knowledge while challenging traditional assumptions.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "What role did influential women such as Madame Geoffrin play in Enlightenment culture?",
+    "a": [
+      "They hosted intellectual gatherings that provided spaces for debate.",
+      "They commanded the Continental Army.",
+      "They drafted the Declaration of Independence.",
+      "They administered the East India Company."
+    ],
+    "k": 0,
+    "e": "The chapter identifies salons hosted by influential women as spaces for debate.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "Which development helped create a wider public sphere for political discourse?",
+    "a": [
+      "A growing reading public consuming newspapers and journals",
+      "The disappearance of newspapers and journals",
+      "The restriction of all debate to royal courts",
+      "The end of intellectual gatherings"
+    ],
+    "k": 0,
+    "e": "The chapter connects newspapers, journals, and a growing reading public to the public sphere.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Why did some European monarchs adopt Enlightenment language to justify their rule?",
+    "a": [
+      "To present their authority as useful to the state rather than based only on divine right",
+      "To announce the immediate end of monarchy",
+      "To transfer all political power to elected assemblies",
+      "To give every subject unrestricted political liberty"
+    ],
+    "k": 0,
+    "e": "The chapter says monarchs justified rule by usefulness to the state, while retaining centralized power.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which combination best describes Enlightened Despotism in the chapter?",
+    "a": [
+      "Centralized power, legal reforms, and economic development without political liberty",
+      "Decentralized power, universal suffrage, and the abolition of monarchy",
+      "Religious uniformity, rejection of law, and economic isolation",
+      "Popular sovereignty and the immediate abolition of social hierarchy"
+    ],
+    "k": 0,
+    "e": "These monarchs pursued reforms but did not grant political liberty to their subjects.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "What happened when Louis XVI reversed ministers' reform efforts in France?",
+    "a": [
+      "Resistance by privileged classes contributed to a fiscal crisis that precipitated revolution.",
+      "The French monarchy immediately gained stable finances.",
+      "The parlements were permanently abolished without resistance.",
+      "France granted independence to its American colonies."
+    ],
+    "k": 0,
+    "e": "The chapter links resistance to reforms and the fiscal crisis preceding revolution.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which outcome followed Joseph II's abrupt reform methods in Austria?",
+    "a": [
+      "They provoked resistance, and most reforms were undone after his death.",
+      "They ended all opposition and remained fully intact.",
+      "They strengthened the Junker aristocracy in Prussia.",
+      "They led directly to the Treaty of Paris."
+    ],
+    "k": 0,
+    "e": "The chapter says his abrupt methods provoked resistance and most reforms were undone.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which description best fits Prussia under Frederick the Great in the chapter?",
+    "a": [
+      "Some reforms were promoted, but society remained rigidly stratified.",
+      "Serfdom was abolished and social hierarchy disappeared.",
+      "The Junker aristocracy lost all influence over serfs.",
+      "The country adopted the American federal Constitution."
+    ],
+    "k": 0,
+    "e": "Religious freedom and codified laws coexisted with a rigid social hierarchy dominated by Junkers.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "What did Catherine the Great do after suppressing the Pugachev Rebellion?",
+    "a": [
+      "Strengthened the nobility, while conditions for serfs worsened.",
+      "Abolished serfdom and imposed tax equality.",
+      "Transferred power to elected peasant assemblies.",
+      "Granted independence to the Russian serfs."
+    ],
+    "k": 0,
+    "e": "The chapter describes strengthened noble power and worsening conditions for serfs.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "Which two figures are identified as critics of corruption and lack of representation in Britain?",
+    "a": [
+      "John Wilkes and Edmund Burke",
+      "Voltaire and Rousseau",
+      "Thomas Paine and Thomas Jefferson",
+      "Montesquieu and Denis Diderot"
+    ],
+    "k": 0,
+    "e": "The chapter names John Wilkes and Edmund Burke in the domestic reform movement.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "What contrast illustrates the problem of parliamentary representation in Britain?",
+    "a": [
+      "Rotten boroughs held seats while industrial cities such as Manchester had none.",
+      "Manchester held many seats while all older boroughs had none.",
+      "The Irish Parliament controlled seats in every British city.",
+      "The East India Company appointed all members of Parliament."
+    ],
+    "k": 0,
+    "e": "The chapter uses rotten boroughs and Manchester to illustrate unequal representation.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "Which event is dated 1745 in the chapter's examples of imperial centralization?",
+    "a": [
+      "Suppressing Scottish Highland clans",
+      "Absorbing the Irish Parliament",
+      "Bringing the East India Company under Parliamentary control",
+      "Passing the Act of Union"
+    ],
+    "k": 0,
+    "e": "The chapter lists suppression of Scottish Highland clans in 1745.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "Which sequence correctly matches the British imperial actions with their dates?",
+    "a": [
+      "East India Company under Parliamentary control (1773); Act of Union (1801)",
+      "Act of Union (1773); East India Company under Parliamentary control (1801)",
+      "Scottish clans suppressed (1801); Act of Union (1745)",
+      "Manchester representation (1773); Irish independence (1801)"
+    ],
+    "k": 0,
+    "e": "The chapter dates Parliamentary control of the East India Company to 1773 and the Act of Union to 1801.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "What did colonists argue about the Stamp Act and Townshend Duties?",
+    "a": [
+      "The taxes violated their rights as Englishmen.",
+      "The taxes granted them representation in Parliament.",
+      "The taxes were imposed by France after Saratoga.",
+      "The taxes abolished the colonial assemblies."
+    ],
+    "k": 0,
+    "e": "The chapter says colonists argued the taxes violated their rights as Englishmen.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Which event prompted Britain's imposition of new taxes to help pay for colonial defense?",
+    "a": [
+      "The Seven Years' War",
+      "The Battle of Saratoga",
+      "The Treaty of Paris",
+      "The Boston Tea Party"
+    ],
+    "k": 0,
+    "e": "The chapter places the new taxes after the Seven Years' War.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Which sequence correctly describes the events in 1773?",
+    "a": [
+      "Colonists dumped tea in Boston Harbor; Britain responded with the Intolerable Acts.",
+      "Britain signed the Treaty of Paris; colonists declared independence.",
+      "France entered the war; the Second Continental Congress appointed Washington.",
+      "The Declaration was drafted; Parliament passed the Act of Union."
+    ],
+    "k": 0,
+    "e": "The chapter links the Boston Tea Party to the British response known as the Intolerable Acts.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "What was the immediate military significance of Lexington and Concord in 1775?",
+    "a": [
+      "Fighting erupted between colonial militiamen and British troops.",
+      "The British surrendered to the French army.",
+      "The Treaty of Paris formally ended the war.",
+      "The Continental Army won the Battle of Saratoga."
+    ],
+    "k": 0,
+    "e": "The chapter describes fighting between colonial militiamen and British troops.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Which body appointed George Washington to lead the Continental Army?",
+    "a": [
+      "The Second Continental Congress",
+      "The British Parliament",
+      "The French National Assembly",
+      "The East India Company"
+    ],
+    "k": 0,
+    "e": "The Second Continental Congress made the appointment described on page 7.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "How did Thomas Paine present the case for independence in Common Sense?",
+    "a": [
+      "In clear, accessible language intended to galvanize public opinion",
+      "Through a technical legal code for the British Parliament",
+      "By defending the continuation of colonial taxation",
+      "By arguing that independence should be delayed indefinitely"
+    ],
+    "k": 0,
+    "e": "The chapter describes the pamphlet as clear and accessible and says it galvanized public opinion.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Which Enlightenment idea is directly reflected in the Declaration's statement of unalienable rights?",
+    "a": [
+      "Natural rights",
+      "Divine right",
+      "Primogeniture",
+      "Imperial centralization"
+    ],
+    "k": 0,
+    "e": "The document presents Life, Liberty, and the pursuit of Happiness as unalienable rights.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "What did France's entry into the American war provide that the chapter describes as decisive?",
+    "a": [
+      "Military and financial support",
+      "A new British tax system",
+      "Control over the Continental Congress",
+      "A replacement for the Declaration of Independence"
+    ],
+    "k": 0,
+    "e": "The chapter explicitly identifies French military and financial support as decisive.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Which event is associated with the year 1783?",
+    "a": [
+      "The Treaty of Paris granting American independence",
+      "The Boston Tea Party",
+      "The Battle of Saratoga",
+      "The adoption of the U.S. Constitution"
+    ],
+    "k": 0,
+    "e": "The Treaty of Paris of 1783 granted American independence.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "Which political changes are listed as part of the American Revolution's consequences?",
+    "a": [
+      "Written state constitutions with bills of rights and a federal Constitution",
+      "Restoration of British colonial rule and royal decrees",
+      "Abolition of all state governments and written laws",
+      "Creation of a hereditary aristocracy"
+    ],
+    "k": 0,
+    "e": "The chapter describes written state constitutions, bills of rights, and the federal Constitution.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "Which changes contributed to a more egalitarian society, within limits, according to the chapter?",
+    "a": [
+      "Abolition of primogeniture, disestablishment of state churches, and expanded voting rights for white males",
+      "Restoration of primogeniture and expansion of state churches",
+      "Universal voting rights regardless of race or status",
+      "Abolition of all state constitutions"
+    ],
+    "k": 0,
+    "e": "These are the democratic expansions specifically listed on page 9.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "Why does the chapter describe slavery as a contradiction in the new American republic?",
+    "a": [
+      "The nation proclaimed equality while slavery continued.",
+      "The Constitution rejected separation of powers.",
+      "The colonies refused to declare independence.",
+      "The Treaty of Paris restored British rule."
+    ],
+    "k": 0,
+    "e": "The chapter explicitly contrasts claims of equality with the persistence of slavery.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Worldwide Influence",
+    "type": "mc",
+    "q": "Which regions are specifically named as influenced by the American Revolution?",
+    "a": [
+      "France and Latin America",
+      "Only Britain and Prussia",
+      "Austria and Russia alone",
+      "Scotland and Ireland only"
+    ],
+    "k": 0,
+    "e": "The chapter names France (1789) and Latin America (1810s–1820s).",
+    "s": "CH8 The Age of Enlightenment.pdf — page 10",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Worldwide Influence",
+    "type": "mc",
+    "q": "What did the American experiment provide to other revolutionary movements?",
+    "a": [
+      "A living model of a functioning republic based on reason, liberty, and self-governance",
+      "Proof that Enlightenment ideas could not be put into practice",
+      "A model for restoring divine-right monarchy",
+      "A plan for expanding European serfdom"
+    ],
+    "k": 0,
+    "e": "The chapter describes the United States as a living model of a functioning republic.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 10",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "tf",
+    "q": "The Philosophes believed rational thought and reform could improve human society.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter says they believed society could be perfected through rational thought and reform.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "tf",
+    "q": "The Scientific Method is described as relying on empirical observation.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter defines it as applying empirical observation to the natural and social world.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "tf",
+    "q": "Social Reform meant protecting traditional authority from legal and political criticism.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "Social Reform involved criticizing traditional authority and demanding legal, political, and economic change.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "tf",
+    "q": "Montesquieu's separation of powers was presented as a safeguard against tyranny.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The three branches were executive, legislative, and judicial.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "tf",
+    "q": "Voltaire believed enlightened monarchs could enact necessary reforms.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter attributes this belief to Voltaire.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "tf",
+    "q": "Rousseau argued that legitimate government derives from the General Will of the people.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "This is the central political argument attributed to Rousseau.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "tf",
+    "q": "The Encyclopédie was edited by Denis Diderot and challenged traditional assumptions.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter describes its critical, reformist perspective.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "tf",
+    "q": "Salons were intellectual gatherings that provided spaces for debate.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter cites salons hosted by influential women, including Madame Geoffrin.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "tf",
+    "q": "The growing readership of newspapers and journals contributed to a public sphere for political discourse.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "This relationship is described on page 4.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Enlightened monarchs generally granted political liberty while centralizing power.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "The chapter emphasizes that reforms did not grant political liberty to subjects.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Joseph II's reforms in Austria included religious toleration and tax equality.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "Both measures are listed alongside the abolition of serfdom.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Most of Joseph II's reforms survived unchanged after his death.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "The chapter says most reforms were undone after his death.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Frederick the Great's Prussia remained socially stratified despite some reforms.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The Junker aristocracy continued to dominate serfs.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "tf",
+    "q": "Catherine the Great strengthened the nobility after suppressing the Pugachev Rebellion.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter also notes worsening conditions for serfs.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "tf",
+    "q": "John Wilkes and Edmund Burke criticized corruption and lack of representation in Britain.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "Both figures are named in the domestic reform movement.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "tf",
+    "q": "Significant British parliamentary reform was delayed until 1832.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The date is stated on page 6.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "tf",
+    "q": "The British government brought the East India Company under Parliamentary control in 1773.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "This is listed as an example of imperial centralization.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "tf",
+    "q": "The Stamp Act and Townshend Duties were imposed after the Seven Years' War.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter links the taxes to the cost of colonial defense.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "tf",
+    "q": "The Intolerable Acts granted Boston a more open port and restored Massachusetts' charter.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 1,
+    "e": "They closed Boston's port and revoked Massachusetts' charter.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "tf",
+    "q": "The Second Continental Congress appointed George Washington to lead the Continental Army.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "This appointment is described in the 1775 timeline.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "tf",
+    "q": "The Battle of Saratoga helped convince France to enter the American war.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter dates Saratoga to 1777 and identifies it as the catalyst for French entry.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "tf",
+    "q": "The Treaty of Paris of 1783 granted American independence.",
+    "a": [
+      "True",
+      "False"
+    ],
+    "k": 0,
+    "e": "The chapter states this directly.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "A student claims that Enlightenment thinkers wanted society to remain exactly as it was. Which evidence from the chapter best challenges that claim?",
+    "a": [
+      "They believed rational thought and reform could improve human society.",
+      "They argued that tradition should always outweigh scientific inquiry.",
+      "They defended religious dogma as the basis of public policy.",
+      "They rejected legal, political, and economic change."
+    ],
+    "k": 0,
+    "e": "The chapter says the Philosophes believed society could be perfected through rational thought and reform.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightenment Principles",
+    "type": "mc",
+    "q": "A researcher tests an explanation by collecting observations rather than accepting it because it is traditional. Which Enlightenment principle does this most directly demonstrate?",
+    "a": [
+      "Religious toleration",
+      "Scientific Method",
+      "Enlightened Despotism",
+      "Primogeniture"
+    ],
+    "k": 1,
+    "e": "The chapter defines the Scientific Method as applying empirical observation to understand the natural and social world.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 2",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "A government divides authority among executive, legislative, and judicial branches. Which concern from Montesquieu's work is this arrangement intended to address?",
+    "a": [
+      "The spread of newspapers and journals",
+      "The concentration of power that can lead to tyranny",
+      "The economic cost of defending colonies",
+      "The persistence of hereditary social classes"
+    ],
+    "k": 1,
+    "e": "Montesquieu presented separation of powers as a safeguard against tyranny.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which situation most closely reflects Rousseau's argument about legitimate government?",
+    "a": [
+      "A ruler governs solely because authority is inherited.",
+      "A government claims legitimacy because it protects the privileges of nobles.",
+      "Political authority is understood as deriving from the General Will of the people.",
+      "A monarch makes reforms but refuses to recognize the people as a source of legitimacy."
+    ],
+    "k": 2,
+    "e": "Rousseau argued that legitimate government derives from the General Will of the people.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Great Philosophes",
+    "type": "mc",
+    "q": "Which comparison between Voltaire and Rousseau is supported by the chapter?",
+    "a": [
+      "Both focused exclusively on the separation of government branches.",
+      "Voltaire championed freedom of thought, while Rousseau emphasized the General Will of the people.",
+      "Voltaire defended religious intolerance, while Rousseau defended divine-right monarchy.",
+      "Both argued that emotion and nature should replace all political institutions."
+    ],
+    "k": 1,
+    "e": "The chapter associates Voltaire with freedom of thought and Rousseau with the General Will, emotion, and nature.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 3",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "Why could the Encyclopédie challenge traditional assumptions beyond the circle of its editors?",
+    "a": [
+      "It compiled human knowledge with a critical, reformist perspective and helped spread Enlightenment thought.",
+      "It restricted intellectual debate to royal courts.",
+      "It replaced newspapers and journals with official government decrees.",
+      "It presented monarchs as the only legitimate source of knowledge."
+    ],
+    "k": 0,
+    "e": "The chapter explains that Diderot's work compiled knowledge critically and spread Enlightenment ideas across Europe.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Spreading Ideas",
+    "type": "mc",
+    "q": "A historian finds that women hosted gatherings where intellectuals debated ideas, while newspapers and journals reached more readers. What broader development does this evidence illustrate?",
+    "a": [
+      "The disappearance of political discussion from public life",
+      "The growth of a public sphere for intellectual and political discourse",
+      "The restoration of religious uniformity across Europe",
+      "The replacement of reform movements by military rule"
+    ],
+    "k": 1,
+    "e": "Salons and a growing reading public helped create spaces for debate and a public sphere.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 4",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "A monarch centralizes authority, reforms laws, and promotes economic development but does not grant political liberty. Which interpretation best fits the chapter?",
+    "a": [
+      "The monarch has adopted features of Enlightened Despotism.",
+      "The monarch has established Rousseau's General Will.",
+      "The monarch has implemented full parliamentary democracy.",
+      "The monarch has abandoned centralized government."
+    ],
+    "k": 0,
+    "e": "The chapter defines Enlightened Despotism as centralized rule with selected reforms but without political liberty for subjects.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Why did reform efforts in France fail to resolve the crisis described in the chapter?",
+    "a": [
+      "The ministers refused to tax privileged groups, and Louis XVI expanded their power.",
+      "Privileged classes resisted attempts to tax the nobility and limit the parlements, and Louis XVI reversed reforms.",
+      "The reforms immediately granted political liberty to all subjects.",
+      "The Pugachev Rebellion forced France to abandon its colonies."
+    ],
+    "k": 1,
+    "e": "Resistance from privileged classes and the reversal of reforms contributed to the fiscal crisis that precipitated revolution.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "Which conclusion best compares the reforms of Joseph II with the outcome after his death?",
+    "a": [
+      "His reforms strengthened noble privilege and remained fully intact.",
+      "His reforms included serfdom's abolition and religious toleration, but most were undone after his death.",
+      "He rejected legal reform and expanded the power of the Junker aristocracy.",
+      "He suppressed the Pugachev Rebellion and worsened the conditions of Russian serfs."
+    ],
+    "k": 1,
+    "e": "The chapter describes Joseph II's reforms and explains that most were reversed after his death.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Enlightened Despotism",
+    "type": "mc",
+    "q": "What does the chapter's account of Catherine the Great suggest about the limits of Enlightenment influence on rulers?",
+    "a": [
+      "Correspondence with Philosophes did not prevent her from strengthening the nobility and worsening serfs' conditions.",
+      "Her correspondence led her to abolish serfdom and establish political equality.",
+      "She granted political liberty after the Pugachev Rebellion.",
+      "She transferred all authority from nobles to elected representatives."
+    ],
+    "k": 0,
+    "e": "Although Catherine corresponded with Philosophes, she strengthened noble power after suppressing the rebellion, and serfs' conditions worsened.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 5",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "Why does the example of Manchester help explain the criticism of rotten boroughs?",
+    "a": [
+      "It shows that industrial cities could lack representation while some small boroughs retained parliamentary seats.",
+      "It shows that every industrial city elected more representatives than rural areas.",
+      "It demonstrates that parliamentary reform had already been completed before 1773.",
+      "It proves that the East India Company controlled seats in the British Parliament."
+    ],
+    "k": 0,
+    "e": "The chapter contrasts rotten boroughs that held seats with industrial Manchester, which had none.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Britain",
+    "type": "mc",
+    "q": "Which statement best captures the two directions of British policy described in the chapter?",
+    "a": [
+      "Britain expanded voting rights immediately while ending imperial control.",
+      "Britain faced domestic demands for parliamentary reform while tightening control over parts of its empire.",
+      "Britain abandoned Parliament and gave the East India Company complete independence.",
+      "Britain ended its involvement in Ireland and India before the Seven Years' War."
+    ],
+    "k": 1,
+    "e": "The chapter presents domestic criticism of representation alongside imperial centralization in Scotland, Ireland, and India.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 6",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Which chain of events best explains the escalation from colonial protest to armed conflict in the chapter?",
+    "a": [
+      "British taxes prompted protest; the Boston Tea Party was followed by the Intolerable Acts; fighting began at Lexington and Concord.",
+      "The Treaty of Paris prompted the Boston Tea Party; France closed Boston's port; fighting began in 1783.",
+      "The Declaration of Independence led Britain to impose the Stamp Act; the Pugachev Rebellion began in Massachusetts.",
+      "The Act of Union led to colonial taxes; the Encyclopédie organized the Continental Army."
+    ],
+    "k": 0,
+    "e": "The chapter links postwar taxation, the Boston Tea Party, the Intolerable Acts, and the outbreak of fighting in 1775.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Revolution Origins",
+    "type": "mc",
+    "q": "Why did many American colonists object to the Stamp Act and Townshend Duties, according to the chapter?",
+    "a": [
+      "They believed the taxes violated their rights as Englishmen because they lacked representation in the decisions imposing them.",
+      "They wanted Britain to increase taxes to pay for defense.",
+      "They opposed all trade between the colonies and Europe.",
+      "They believed the taxes abolished the Massachusetts charter."
+    ],
+    "k": 0,
+    "e": "The chapter says colonists argued that the taxes imposed after the Seven Years' War violated their rights as Englishmen.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 7",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "What was the significance of Thomas Paine's writing style in Common Sense?",
+    "a": [
+      "Its clear, accessible language helped galvanize public opinion in favor of independence.",
+      "Its technical legal language restricted the debate to judges and lawyers.",
+      "It persuaded Parliament to restore Massachusetts' charter.",
+      "It served as the peace treaty that ended the war."
+    ],
+    "k": 0,
+    "e": "The chapter emphasizes that Paine made the case for independence in clear, accessible language that galvanized public opinion.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Independence and Victory",
+    "type": "mc",
+    "q": "Which explanation best connects the Battle of Saratoga to the American victory?",
+    "a": [
+      "It convinced France to enter the war, and French military and financial support proved decisive.",
+      "It ended the war immediately by granting independence in 1777.",
+      "It caused the British Parliament to repeal the Act of Union.",
+      "It led the colonies to abandon the Declaration of Independence."
+    ],
+    "k": 0,
+    "e": "The chapter identifies Saratoga as the event that convinced France to enter the war; French military and financial support proved decisive.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 8",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "Which interpretation best explains why the chapter describes the American Revolution's democratic expansion as limited?",
+    "a": [
+      "Some political and legal changes expanded equality for white males, while slavery continued.",
+      "The revolution abolished slavery but preserved primogeniture.",
+      "The Constitution eliminated all distinctions in political participation.",
+      "The revolution rejected written constitutions and bills of rights."
+    ],
+    "k": 0,
+    "e": "The chapter notes reforms such as ending primogeniture and expanding voting rights for white males, while slavery persisted.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "American Consequences",
+    "type": "mc",
+    "q": "A student argues that the American Revolution fully achieved the principle that all people were equal. Which evidence in the chapter most directly challenges this interpretation?",
+    "a": [
+      "The Constitution established a federal government.",
+      "State constitutions included bills of rights.",
+      "Slavery persisted despite the republic's proclamation of equality.",
+      "The Battle of Saratoga encouraged French support."
+    ],
+    "k": 2,
+    "e": "The chapter explicitly identifies the persistence of slavery as a profound contradiction to the language of equality.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 9",
+    "origin": "slides"
+  },
+  {
+    "c": 8,
+    "t": "Worldwide Influence",
+    "type": "mc",
+    "q": "What made the American Revolution influential to later movements in France and Latin America, according to the chapter?",
+    "a": [
+      "It demonstrated that ideas about natural rights and self-government could be put into practice in a functioning republic.",
+      "It proved that monarchy was the only form of government capable of reform.",
+      "It showed that political change could occur only through salons and pamphlets.",
+      "It ended all social inequality and conflict in the United States."
+    ],
+    "k": 0,
+    "e": "The chapter says the American experiment became a model showing that Enlightenment principles could become political reality.",
+    "s": "CH8 The Age of Enlightenment.pdf — page 10",
+    "origin": "slides"
+  }
+];
 let quiz=[],idx=0,answers=[],checked=false,mode="study";
 const $=id=>document.getElementById(id);
 function isAnswered(q,a){return q.type==="matching"?Array.isArray(a)&&a.length===q.terms.length&&a.every(v=>v!==null&&v!==undefined):a!==null&&a!==undefined}
